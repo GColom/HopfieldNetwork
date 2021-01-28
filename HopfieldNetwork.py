@@ -105,7 +105,7 @@ def parallel_glauber(T):
     #print(indices)
     print("T = ", get_current_temperature(),", ", "\u03B1", " = ", len(patterns)/size, ", init pattern : " ,loaded, ", Nominal fraction of corrupted bits = ", corr)
     for spin in indices:    
-        pool.apply_async(single_evolve(spin), indices)
+        pool.apply_async(single_evolve(spin))
 
 def ev_step(T):
     global spins
