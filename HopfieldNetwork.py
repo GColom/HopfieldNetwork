@@ -22,9 +22,9 @@ temp = 0.1
 #Patterns choice, "random" or "test"
 p_type = "random"
 #Number of patterns
-p = 10
+p = 80
 #Corruption percentage of loaded pattern
-corr = 0.4
+corr = 0.20
 #Dynamics, choose "Glauber" or "Metropolis"
 dyn = "Glauber"
 
@@ -54,7 +54,7 @@ pattern3 = np.array([[-1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1.
 #Letter A
 #Patterns to be stored in the network
 patterns = [pattern1, pattern2, pattern3] if p_type == "test" else [np.random.choice([-1,1], size = size) for i in range(p)]
-nproc = 12
+nproc = 8
 pool = mp.Pool(nproc)
 
 
@@ -164,3 +164,4 @@ weight_distribution = ax2.hist(J.flatten(), bins = np.linspace(-0.04,0.04, 18), 
 ax2.set_title('Couplings distribution')
 ax2.set_xlim([-0.04, 0.04])
 ax2.grid(True)
+plt.show()
